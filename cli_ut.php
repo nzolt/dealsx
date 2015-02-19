@@ -1,10 +1,14 @@
 <?php
+
+/**
+ * Test Class for Deal
+ * @mail nzolt@dotweb.hu
+ * @author Zoltan Nagy
+ */
 require_once 'class/deal.php';
 require_once 'PHPUnit/Autoload.php';
 
-/**
- * Test Class for Deal 
- */
+
 class dealTest extends PHPUnit_Framework_TestCase {
 
     protected $dealer;

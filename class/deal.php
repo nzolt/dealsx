@@ -8,17 +8,13 @@
 
 /**
  * Description of deal
- *
+ * @mail nzolt@dotweb.hu
  * @author Zoltan Nagy
  */
 require_once 'dealexception.php';
 
 class Deal {
 
-    /**
-     *
-     * @var type 
-     */
 	public $_deck = array();
     public $_hands = array();
     protected $_players = array('Player 1', 'Player 2', 'Player 3', 'Player 4');
@@ -63,11 +59,11 @@ class Deal {
     /**
      * deal number of cards for each hand, returns number of cards dealed
      * one card for each player on one round
-     * @param int $cardnr
+     * @param int $cardNr
      */
-    protected function dealHand($cardnr) {
+    protected function dealHand($cardNr) {
 		$this->generateDeck()->shuffleCards();
-        for ($i = 1; $i <= $cardnr; $i++) {
+        for ($i = 1; $i <= $cardNr; $i++) {
             foreach ($this->_players as $player) {
                 $this->_hands[$player][$i] = array_pop($this->_deck);
             }
@@ -81,8 +77,8 @@ class Deal {
      * @return \deal
      */
     public function printCards() {
-        foreach ($this->_hands as $playername => $hand) {
-            print $playername . ': ' . implode(' - ', $hand).PHP_EOL;            
+        foreach ($this->_hands as $playerName => $hand) {
+            print $playerName . ': ' . implode(' - ', $hand).PHP_EOL;
         }
         return $this;
     }
